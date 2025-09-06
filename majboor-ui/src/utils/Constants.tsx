@@ -4,3 +4,7 @@ export const NAV = {
     CONTACT : 'contact',
     LEARN :'learn'
 }
+
+export const NAV_LABELS = ['Home', 'About', 'Learn', 'Contact'];
+
+export const HEADER_TITLE = "Majboor Majdoor Courses";
