@@ -1,20 +1,34 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function DropDown({ activeNav, handleNavClick }: { activeNav: string; handleNavClick: (nav: string) => void }) {
+function renderDropDownItems(dropdownItems: string[]) {
+  return dropdownItems.map((item) => (
+    <li>
+      <a className="dropdown-item " href="#">
+        {item}
+      </a>
+    </li>
+  ));
+}
+
+function DropDown(props: {
+  activeNav: string;
+  handleNavClick: (nav: string) => void;
+  dropdownItems: string[];
+}) {
   const [showLearnDropdown, setShowLearnDropdown] = useState(false);
 
   return (
     <li
-      className="nav-item dropdown position-static"
+      className="nav-item dropdown"
       onMouseEnter={() => setShowLearnDropdown(true)}
       onMouseLeave={() => setShowLearnDropdown(false)}
     >
       <a
         className={`nav-link dropdown-toggle ${
-          activeNav === "learn" ? "active" : ""
+          props.activeNav === "learn" ? "active" : ""
         }`}
-        onClick={() => handleNavClick("learn")}
+        onClick={() => props.handleNavClick("learn")}
         href="#"
         role="button"
         aria-expanded={showLearnDropdown}
@@ -22,25 +36,8 @@ function DropDown({ activeNav, handleNavClick }: { activeNav: string; handleNavC
         Learn
       </a>
       {showLearnDropdown && (
-        <ul
-          className="dropdown-menu show"
-          style={{ position: "absolute", top: "100%", left: 0 }}
-        >
-          <li>
-            <a className="dropdown-item" href="#">
-              Course 1
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Course 2
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Course 3
-            </a>
-          </li>
+        <ul className="dropdown-menu show">
+          {renderDropDownItems(props.dropdownItems)}
         </ul>
       )}
     </li>

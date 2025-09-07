@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HEADER_TITLE, NAV_LABELS } from "../utils/Constants";
+import { HEADER_TITLE, LEARN_DROPDOWN_ITEMS, NAV_LABELS } from "../utils/Constants";
 import DropDown from "./DropDown";
 
 const Menu = () => {
@@ -58,7 +58,7 @@ const Menu = () => {
                 About
               </a>
             </li>
-            <DropDown activeNav={activeNav} handleNavClick={handleNavClick} />
+            <DropDown activeNav={activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/>
 
             <li className="nav-item">
               <a
