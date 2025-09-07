@@ -1,29 +1,14 @@
-import { useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HEADER_TITLE, LEARN_DROPDOWN_ITEMS, NAV_LABELS } from "../utils/Constants";
 import DropDown from "./DropDown";
 
-const Menu = () => {
-  const [activeNav, setActiveNav] = useState("home");
-
+const Menu = (props: {activeNav: string; setActiveNav: (nav:string)=> void}) => {
+  
   const handleNavClick = (nav: string) => {
-    setActiveNav(nav);
+    props.setActiveNav(nav);
   };
-
-  const renderNavItem = () => {
-    return NAV_LABELS.map((item) => (
-      <li className="nav-item">
-        <a
-          className={`nav-link ${activeNav === item ? "active" : ""}`}
-          onClick={() => handleNavClick(item)}
-          href="#"
-        >
-          {item}
-        </a>
-      </li>
-    ));
-  };
-
+  
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container-fluid">
@@ -42,7 +27,7 @@ const Menu = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
-                className={`nav-link ${activeNav === "home" ? "active" : ""}`}
+                className={`nav-link ${props.activeNav === "home" ? "active" : ""}`}
                 onClick={() => handleNavClick("home")}
                 href="#"
               >
@@ -51,19 +36,19 @@ const Menu = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${activeNav === "about" ? "active" : ""}`}
+                className={`nav-link ${props.activeNav === "about" ? "active" : ""}`}
                 onClick={() => handleNavClick("about")}
                 href="#"
               >
                 About
               </a>
             </li>
-            <DropDown activeNav={activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/>
+            <DropDown activeNav={props.activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/>
 
             <li className="nav-item">
               <a
                 className={`nav-link ${
-                  activeNav === "contact" ? "active" : ""
+                  props.activeNav === "contact" ? "active" : ""
                 }`}
                 onClick={() => handleNavClick("contact")}
                 href="#"
