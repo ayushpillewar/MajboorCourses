@@ -1,7 +1,7 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HEADER_TITLE, LEARN_DROPDOWN_ITEMS, NAV_LABELS } from "../utils/Constants";
-import DropDown from "./DropDown";
+import { HEADER_TITLE} from "../utils/Constants";
+// import DropDown from "./DropDown";
 
 const Menu = (props: {activeNav: string; setActiveNav: (nav:string)=> void}) => {
   
