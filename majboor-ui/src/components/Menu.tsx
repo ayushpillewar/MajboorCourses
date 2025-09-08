@@ -43,7 +43,7 @@ const Menu = (props: {activeNav: string; setActiveNav: (nav:string)=> void}) => 
                 About
               </a>
             </li>
-            <DropDown activeNav={props.activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/>
+            {/* <DropDown activeNav={props.activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/> */}
 
             <li className="nav-item">
               <a
