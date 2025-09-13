@@ -21,7 +21,7 @@ export const WEB_DEV_YT_PLAYLIST = "https://www.youtube.com/watch?v=j-ItD1Rs808&
 
 export const AWS_DEVELOPER_CERTIFICATE = "https://www.credly.com/badges/9c0b17f1-4ade-403d-b547-95b3424588dd/public_url";  // Replace with your actual Credly badge URL
 
-export const INSTAGRAM_PROFILE = "https://www.instagram.com/majboor_majdoora_o4h/";
+export const INSTAGRAM_PROFILE = "https://www.instagram.com/majboor_majdoor_o4h/";
 export const YOUTUBE_CHANNEL = "https://www.youtube.com/@majboor_majdoor-o4h";
 
 export const EMAIL = "ayushpillewar18@gmail.com"
