@@ -3,11 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { HEADER_TITLE} from "../utils/Constants";
 // import DropDown from "./DropDown";
 
-const Menu = (props: {activeNav: string; setActiveNav: (nav:string)=> void}) => {
-  
-  const handleNavClick = (nav: string) => {
-    props.setActiveNav(nav);
-  };
+import { Link, useLocation } from 'react-router-dom';
+
+const Menu = () => {
+  const location = useLocation();
   
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -26,36 +25,41 @@ const Menu = (props: {activeNav: string; setActiveNav: (nav:string)=> void}) => 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
-                className={`nav-link ${props.activeNav === "home" ? "active" : ""}`}
-                onClick={() => handleNavClick("home")}
-                href="#"
+              <Link
+                to="/"
+                className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                className={`nav-link ${props.activeNav === "about" ? "active" : ""}`}
-                onClick={() => handleNavClick("about")}
-                href="#"
+              <Link
+                to="/about"
+                className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}
               >
                 About
-              </a>
+              </Link>
             </li>
             {/* <DropDown activeNav={props.activeNav} handleNavClick={handleNavClick} dropdownItems={LEARN_DROPDOWN_ITEMS}/> */}
 
             <li className="nav-item">
-              <a
-                className={`nav-link ${
-                  props.activeNav === "contact" ? "active" : ""
-                }`}
-                onClick={() => handleNavClick("contact")}
-                href="#"
+              <Link
+                to="/contact"
+                className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}
               >
                 Contact
-              </a>
+              </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                to="/docs"
+                className={`nav-link ${location.pathname === "/docs" ? "active" : ""}`}
+              >
+                docs
+              </Link>
+            </li>
+
+            
           </ul>
         </div>
       </div>
