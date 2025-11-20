@@ -52,6 +52,14 @@ const Menu = () => {
             </li>
             <li className="nav-item">
               <Link
+                to="/product"
+                className={`nav-link ${location.pathname === "/product" ? "active" : ""}`}
+              >
+                Product
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 to="/docs"
                 className={`nav-link ${location.pathname === "/docs" ? "active" : ""}`}
               >

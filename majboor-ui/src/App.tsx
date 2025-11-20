@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AboutMe from "./components/AboutMe";
 import HomePage from "./components/HomePage";
 import Contact from "./components/Contact";
+import Product from "./components/Product";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NginxDeploy from "./webpages/NginxDeploy";
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/docs" element={<NginxDeploy />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
     </Router>
   );
