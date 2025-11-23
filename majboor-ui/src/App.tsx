@@ -13,11 +13,11 @@ function App() {
     <Router>
       <Menu />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Product />} />
         <Route path="/docs" element={<NginxDeploy />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product" element={<HomePage />} />
       </Routes>
     </Router>
   );
