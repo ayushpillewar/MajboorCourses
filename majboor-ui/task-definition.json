@@ -1,14 +1,16 @@
 {
   "family": "majboor-ui-task",
   "networkMode": "awsvpc",
-  "requiresCompatibilities": ["FARGATE"],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::749210468718:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "majboor-ui",
-      "image": "ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/majboor-ui:latest",
+      "name": "WEB_SITE_CONTAINER",
+      "image": "749210468718.dkr.ecr.ap-south-1.amazonaws.com/majboor-ui:latest",
       "portMappings": [
         {
           "containerPort": 80,
@@ -16,22 +18,7 @@
         }
       ],
       "essential": true,
-      "environment": [],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/majboor-ui",
-          "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
-        }
-      },
-      "healthCheck": {
-        "command": ["CMD-SHELL", "wget -q --spider http://localhost/ || exit 1"],
-        "interval": 30,
-        "timeout": 5,
-        "retries": 3,
-        "startPeriod": 60
-      }
+      "environment": []
     }
   ]
 }
