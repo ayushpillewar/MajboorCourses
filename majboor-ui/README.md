@@ -67,3 +67,11 @@ export default tseslint.config([
   },
 ])
 ```
+
+
+## Run in local
+npm run dev
+
+## connect to ec2 
+ssh -i ayush.pem ubuntu@ipaddress
+
