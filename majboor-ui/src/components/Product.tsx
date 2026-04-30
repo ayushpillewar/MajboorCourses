@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product = () => {
-    const appStoreUrl = "https://play.google.com/store/apps/details?id=com.majboormajdoor.locationtracker";
+    const appStoreUrl = "https://apps.apple.com/us/app/familypin-keep-family-safe/id6762217380";
 
     return (
         <div className="container-fluid p-0">
@@ -16,14 +16,15 @@ const Product = () => {
                                 A powerful and reliable real-time location tracking application designed for safety, 
                                 convenience, and peace of mind.
                             </p>
+                            
                             <a 
                                 href={appStoreUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-success btn-lg"
+                                className="btn btn-primary btn-lg"
                             >
-                                <i className="fab fa-google-play me-2"></i>
-                                Download on Google Play
+                                <i className="fab fa-apple me-2"></i>
+                                Download on the App Store
                             </a>
                         </div>
                         <div className="col-md-6 text-center">
