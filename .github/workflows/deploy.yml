@@ -1,0 +1,28 @@
+
+# add your ec2 ssh key to github secrets with the name EC2_SSH_KEY before using this workflow
+name: Deploy to EC2
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 3.108.70.122
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo su
+            cd /home/ubuntu/MajboorCourses
+            git pull
+            cd /home/ubuntu/MajboorCourses/majboor-ui
+            npm run build
+            exit
+            exit
