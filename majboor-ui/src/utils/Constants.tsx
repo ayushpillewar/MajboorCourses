@@ -9,7 +9,7 @@ export const NAV_LABELS = ['Home', 'About', 'Learn', 'Contact'];
 
 export const LEARN_DROPDOWN_ITEMS = ["AWS", "Python", "Java"];
 
-export const HEADER_TITLE = "Majboor Majdoor Courses";
+export const HEADER_TITLE = "Family Locator";
 
 export const PYTHON_YT_PLAYLIST = "https://www.youtube.com/playlist?list=PLOA3QgxSVK6kNgbB0tSA-A4ejf9AA81ui";
 
