@@ -73,5 +73,12 @@ export default tseslint.config([
 npm run dev
 
 ## connect to ec2 
-ssh -i ayush.pem ubuntu@ipaddress
+ssh -i ayush.pem ubuntu@3.108.70.122
+
+## refresh code on server
+1.sudo su
+2.cd /home/ubuntu/MajboorCourses
+3.git pull
+4./home/ubuntu/MajboorCourses/majboor-ui
+5.npm run build
 
